@@ -728,12 +728,15 @@ address {
 
 .portfolio-card {
   position: relative;
+  overflow: hidden;
 }
 
 .description {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   font-size: 18px;
   line-height: 1.56;
   color: var(--white-color);
@@ -745,14 +748,13 @@ address {
   transition: transform 250ms var(--time-cubic);
   transform: translateY(100%);
   background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
 }
 
-.description:hover,
-.description:focus {
+.portfolio-link:hover .description,
+.portfolio-link:focus .description {
   transform: translateY(0);
-  opacity: 1;
 }
+
 .portfolio-works {
   margin-bottom: 4px;
   font-weight: 700;
