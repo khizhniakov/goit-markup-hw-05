@@ -250,6 +250,7 @@ address {
 .backdpor.is-hedden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .modal {
