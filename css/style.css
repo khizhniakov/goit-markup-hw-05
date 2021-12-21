@@ -157,7 +157,6 @@ address {
 .contacts:focus,
 .link-header:hover,
 .link-header:focus {
-  transition: transform 250ms var(--time-cubic);
   color: var(--theme-color);
 }
 .contacts:hover::after,
@@ -222,7 +221,6 @@ address {
 /* button */
 
 .button {
-  display: block;
   margin: 30px auto 0px;
   padding: 10px 32px;
   min-width: 136px;
@@ -233,9 +231,6 @@ address {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
-  display: flex;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.06em;
   color: var(--white-color);
   background-color: var(--theme-color);
@@ -243,22 +238,47 @@ address {
   font-family: inherit;
 }
 
-.is-hidden {
-  visibility: hidden;
+.backdpor {
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdpor.is-hedden {
   opacity: 0;
   pointer-events: none;
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--paragraph-color);
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 250ms var(--time-cubic), visibility 250ms var(--time-cubic);
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 528px;
+  max-height: 581px;
+  background-color: var(--white-color);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.close-modal {
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+.vector-x {
+  fill: rgba(0, 0, 0, 1);
 }
 /* end button */
 
@@ -449,6 +469,7 @@ address {
   justify-content: center;
   min-width: 206px;
   height: 44px;
+  transition: transform 250ms var(--time-cubic);
 }
 
 .mate-item {
@@ -472,6 +493,7 @@ address {
   height: 44px;
   border-radius: 50%;
   color: var(--social-links-prime-color);
+  transition: transform 250ms var(--time-cubic);
 }
 
 .social-icon {
@@ -535,11 +557,13 @@ address {
   padding-left: 0;
   display: flex;
   justify-content: start;
+  transition: transform 250ms var(--time-cubic);
 }
 
 .footer.social-links .social-links {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--white-color);
+  transition: transform 250ms var(--time-cubic);
 }
 
 .footer.social-links .social-item:not(:first-child) {
@@ -699,6 +723,10 @@ address {
   margin-left: auto;
   margin-right: auto;
   padding: 0;
+}
+
+.portfolio-work-item {
+  transition: transform 250ms var(--time-cubic);
 }
 
 .portfolio-work-item:not(:nth-child(3n)) {
