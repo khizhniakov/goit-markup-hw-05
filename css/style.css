@@ -239,18 +239,22 @@ address {
 }
 
 .backdpor {
+  transition: opacity 250ms var(--time-cubic), visibility 250ms var(--time-cubic);
   opacity: 1;
   position: fixed;
+  left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.backdpor.is-hedden {
-  opacity: 0;
+.backdpor .is-hidden .modal {
   pointer-events: none;
   visibility: hidden;
+  transform: translate(-50%, -50%) scale(0, 9);
+  opacity: 0;
+  transition: transform 250ms var(--time-cubic);
 }
 
 .modal {
@@ -263,6 +267,11 @@ address {
   background-color: var(--white-color);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--time-cubic), opacity 250ms var(--time-cubic),
+    scale 250ms var(--time-cubic);
+  border-radius: 4px;
 }
 
 .close-modal {
